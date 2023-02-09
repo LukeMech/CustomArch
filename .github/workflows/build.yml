@@ -7,7 +7,6 @@ jobs:
   build:
     
     runs-on: ubuntu-latest
-    
     container:
       image: docker://archlinux
       options: --cap-add SYS_ADMIN --security-opt apparmor:unconfined
@@ -19,6 +18,7 @@ jobs:
     - name: Get current date
       id: date
       run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+    
     - name: Install packages
       run: pacman -Syyu archiso --noconfirm
 
