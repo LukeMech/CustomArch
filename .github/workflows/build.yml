@@ -17,10 +17,10 @@ jobs:
       uses: actions/checkout@main
 
     - name: Install needed packages
-      run: pacman -Syyu ./archiso --noconfirm
+      run: pacman -Syyu --noconfirm
 
     - name: Build ISO
-      run: mkarchiso -v -w /var/cache/archiso-tmp -o /build .
+      run: mkarchiso -v -w ./archiso -o /build .
 
     - name: Upload ISO
       uses: actions/upload-artifact@main
