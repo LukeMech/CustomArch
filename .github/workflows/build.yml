@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     
     container:
       image: docker://archlinux
@@ -16,7 +16,7 @@ jobs:
       uses: actions/checkout@main
 
     - name: Install needed packages
-      run: pacman --Syyu archiso --noconfirm
+      run: pacman -Syyu archiso --noconfirm
 
     - name: Build ISO
       run: ./build.sh
