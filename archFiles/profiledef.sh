@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="lukemecharch"
+iso_name="LukeMechArch"
 iso_label="LukeMechArch"
 iso_publisher="LukeMech <https://LukeMech.github.io>"
 iso_application="LukeMechArch Live CD"
-iso_version="$(date +%Y.%m.%d)"
+iso_version="$(date +%y.%m)"
 install_dir="arch"
 buildmodes=('iso')
 bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito'
