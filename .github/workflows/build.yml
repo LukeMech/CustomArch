@@ -20,7 +20,7 @@ jobs:
       run: pacman -Syyu archiso --noconfirm
 
     - name: Build ISO
-      run: mkarchiso -v -w /archiso -o /build .
+      run: ./build.sh
 
     - name: Upload ISO
       uses: actions/upload-artifact@main
