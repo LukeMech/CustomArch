@@ -23,7 +23,6 @@ jobs:
       id: info
       run: |
         echo "num=$(date +'%y.%m-')" >> $GITHUB_OUTPUT
-        echo "sha=$(git rev-parse --short '$GITHUB_SHA')" >> $GITHUB_OUTPUT
 
     - name: Build ISO
       run: sh build.sh
@@ -31,5 +30,5 @@ jobs:
     - name: Upload ISO
       uses: actions/upload-artifact@main
       with:
-        name: LukeMechArch ${{ steps.info.outputs.num }}${{ steps.info.outputs.sha }}
+        name: LukeMechArch ${{ steps.info.outputs.num }}${{ GITHUB_SHA::6 }}
         path: /build
