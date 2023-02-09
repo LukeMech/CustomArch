@@ -10,7 +10,7 @@ jobs:
     
     container:
       image: docker://archlinux
-      options: --user root
+      options: --mount
     
     steps:
     - name: Checkout code
