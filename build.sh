@@ -1,3 +1,4 @@
 mkdir /repo
-repo-add /repo/custom.db.tar.gz ./packages/*
+cp ./packages/* /repo
+repo-add /repo/custom.db.tar.gz /repo/*
 mkarchiso -v -w /archiso -o /build .
