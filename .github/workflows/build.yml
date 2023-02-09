@@ -5,16 +5,24 @@ on:
 
 jobs:
   build:
+    
     runs-on: ubuntu-latest
-
+    
+    container:
+      image: docker://archlinux
+    
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@main
 
-    - name: Run script in Docker container
-      uses: docker://archlinux
-      env:
-        MY_VAR: hmm
-      run: |
-        echo "Running inside a Docker container"
-        echo "Environment variable MY_VAR=$MY_VAR"
+    - name: Install needed packages
+      run: pacman --Syyu archiso --noconfirm
+
+    - name: Build ISO
+      run: ./build.sh
+
+    - name: Upload ISO
+      uses: actions/upload-artifact@main
+      with:
+        name: LukeMechArch
+        path: build/

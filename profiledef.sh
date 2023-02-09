@@ -2,7 +2,7 @@
 # shellcheck disable=SC2034
 
 iso_name="lukemecharch"
-iso_label="LukeMechArch ($(date +%Y%m))"
+iso_label="LukeMechArch"
 iso_publisher="LukeMech <https://LukeMech.github.io>"
 iso_application="LukeMechArch Live CD"
 iso_version="$(date +%Y.%m.%d)"
