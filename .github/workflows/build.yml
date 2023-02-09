@@ -13,7 +13,7 @@ jobs:
     
     steps:  
 
-    - name: Get code from repo
+    - name: Clone code
       uses: actions/checkout@main
 
     - name: Get current date
