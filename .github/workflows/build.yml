@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@main
 
     - name: Install needed packages
-      run: pacman -Syyu --noconfirm
+      run: pacman -Syyu archiso --noconfirm
 
     - name: Build ISO
       run: mkarchiso -v -w ./archiso -o /build .
