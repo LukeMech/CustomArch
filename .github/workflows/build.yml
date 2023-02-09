@@ -16,9 +16,11 @@ jobs:
     - name: Clone code
       uses: actions/checkout@main
 
-    - name: Get current date
-      id: date
-      run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+    - name: Get some info
+      id: info
+      run: |
+        echo "num=$(date +'%y.%m-')" >> $GITHUB_OUTPUT
+        echo "sha=$(git rev-parse --short "$GITHUB_SHA)" >> $GITHUB_OUTPUT
     
     - name: Install packages
       run: pacman -Syyu archiso --noconfirm
@@ -29,5 +31,5 @@ jobs:
     - name: Upload ISO
       uses: actions/upload-artifact@main
       with:
-        name: LukeMechArch ${{ steps.date.outputs.date }}
+        name: LukeMechArch ${{ steps.info.outputs.num }}${{ steps.info.outputs.sha }}
         path: /build
