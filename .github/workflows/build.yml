@@ -10,7 +10,6 @@ jobs:
     
     container:
       image: docker://archlinux
-      options: --mount
     
     steps:
     - name: Checkout code
@@ -20,7 +19,7 @@ jobs:
       run: pacman -Syyu archiso --noconfirm
 
     - name: Build ISO
-      run: mkarchiso -v -w ./archiso-tmp -o /build .
+      run: mkarchiso -v -w /tmp/archiso-tmp -o /build .
 
     - name: Upload ISO
       uses: actions/upload-artifact@main
