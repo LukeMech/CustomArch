@@ -15,15 +15,15 @@ jobs:
 
     - name: Clone code
       uses: actions/checkout@main
+    
+    - name: Install packages
+      run: pacman -Syyu archiso git --noconfirm
 
     - name: Get some info
       id: info
       run: |
         echo "num=$(date +'%y.%m-')" >> $GITHUB_OUTPUT
         echo "sha=$(git rev-parse --short '$GITHUB_SHA')" >> $GITHUB_OUTPUT
-    
-    - name: Install packages
-      run: pacman -Syyu archiso --noconfirm
 
     - name: Build ISO
       run: sh build.sh
