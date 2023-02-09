@@ -13,6 +13,10 @@ jobs:
       options: --cap-add SYS_ADMIN --security-opt apparmor:unconfined
     
     steps:
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+
     - name: Get code
       uses: actions/checkout@main
 
@@ -25,5 +29,5 @@ jobs:
     - name: Upload ISO
       uses: actions/upload-artifact@main
       with:
-        name: LukeMechArch
-        path: build/
+        name: LukeMechArch ${{ steps.date.outputs.date }}
+        path: /build
