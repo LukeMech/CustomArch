@@ -10,7 +10,7 @@ jobs:
     
     container:
       image: docker://archlinux
-      options: --cap-add SYS_ADMIN
+      options: --cap-add SYS_ADMIN -security-opt apparmor:unconfined
     
     steps:
     - name: Checkout code
@@ -20,7 +20,7 @@ jobs:
       run: pacman -Syyu archiso --noconfirm
 
     - name: Build ISO
-      run: mkarchiso -v -w ./archiso -o /build .
+      run: mkarchiso -v -w /archiso -o /build .
 
     - name: Upload ISO
       uses: actions/upload-artifact@main
