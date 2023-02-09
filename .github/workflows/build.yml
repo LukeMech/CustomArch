@@ -10,6 +10,7 @@ jobs:
     
     container:
       image: docker://archlinux
+      options: --cap-add SYS_ADMIN
     
     steps:
     - name: Checkout code
