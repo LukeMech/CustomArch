@@ -13,10 +13,10 @@ jobs:
       options: --cap-add SYS_ADMIN --security-opt apparmor:unconfined
     
     steps:
-    - name: Checkout code
+    - name: Get code
       uses: actions/checkout@main
 
-    - name: Install needed packages
+    - name: Install packages
       run: pacman -Syyu archiso --noconfirm
 
     - name: Build ISO
