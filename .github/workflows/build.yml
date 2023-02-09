@@ -5,13 +5,14 @@ on:
 
 jobs:
   build:
-    
+
     runs-on: ubuntu-latest
     container:
       image: docker://archlinux
       options: --cap-add SYS_ADMIN --security-opt apparmor:unconfined
     
     steps:  
+
     - name: Get code from repo
       uses: actions/checkout@main
 
