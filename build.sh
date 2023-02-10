@@ -1,9 +1,8 @@
 pacman -Syu archiso git --noconfirm
 
 mkdir /repo
-useradd --shell=/bin/false aur-temp && usermod -L aur-temp
+useradd -m aur-temp
 
-USER aur-temp
 runuser -l aur-temp -c git clone https://aur.archlinux.org/yay-bin
 cd yay-bin
 source PKGBUILD && pacman -Syu --noconfirm --needed --asdeps "${makedepends[@]}" "${depends[@]}"
