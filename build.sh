@@ -35,7 +35,7 @@ cd ..
 repo-add /repo/aur-local.db.tar.gz /repo/*
 
 if [ $PlymouthInstalled -eq 0 ]; then pacman -Rns plymouth --noconfirm; fi
-pacman -Qdtq | pacman -Rns -
+pacman -Qdtq | pacman -Rns - --noconfirm
 
 # Make ISO
 mkarchiso -v -w /archiso -o /lukeMechArch /workingDir/archFiles
