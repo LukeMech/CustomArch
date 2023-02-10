@@ -22,16 +22,16 @@ jobs:
     - name: Get date and commit number
       id: info
       run: |
-        echo "num=$(date +'%y.%m-')" >> $GITHUB_OUTPUT
+        echo "num=$(date +'%y.%m')" >> $GITHUB_OUTPUT
         echo "sha=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
 
     - name: Add commit number to ISO name
       run: |
         cd /lukeMechArch
-        mv *.iso "LukeMechArch ${{ steps.info.outputs.num }}${{ steps.info.outputs.sha }}.iso"
+        mv *.iso "LukeMechArch ${{ steps.info.outputs.num }} (${{ steps.info.outputs.sha }}).iso"
 
     - name: Upload ISO
       uses: actions/upload-artifact@main
       with:
-        name: LukeMechArch ${{ steps.info.outputs.num }}${{ steps.info.outputs.sha }}
+        name: LukeMechArch ${{ steps.info.outputs.num }} (${{ steps.info.outputs.sha }})
         path: /lukeMechArch
