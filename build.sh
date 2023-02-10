@@ -3,7 +3,8 @@ mkdir /repo
 
 useradd -m -d /maketmp maketmp
 
-runuser -u maketmp git "clone https://aur.archlinux.org/yay-bin" 
+runuser -u maketmp -- "git clone https://aur.archlinux.org/yay-bin" 
+ls
 cd yay-bin 
 runuser -u maketmp makepkg -s
 runuser -u maketmp ls
