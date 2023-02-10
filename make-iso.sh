@@ -2,10 +2,10 @@
 set -e
 
 # Run pulling from aur
-sh ./scripts/pullFromAur.sh
+sh /scripts/pullFromAur.sh
 
 # Run build
-sh ./scripts/build.sh
+sh scripts/build.sh
 
 # Run cleanup
-sh ./scripts/cleanup.sh
+sh scripts/cleanup.sh

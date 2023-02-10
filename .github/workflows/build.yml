@@ -17,10 +17,10 @@ jobs:
       uses: actions/checkout@main
 
     - name: Build AUR packages
-      run: sh ./scripts/pullFromAur.sh
+      run: sh scripts/pullFromAur.sh
 
     - name: Create ISO
-      run: sh build.sh
+      run: sh scripts/build.sh
 
     - name: Get date & commit number
       id: info
