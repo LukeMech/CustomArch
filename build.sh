@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-Set -e
+set -e
 
 pacman -Syu git base-devel archiso --noconfirm
 
