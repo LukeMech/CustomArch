@@ -2,6 +2,7 @@ pacman -Syu archiso git --noconfirm
 
 mkdir /repo
 useradd -m aurtemp
+cd /home/aurtemp
 
 runuser -l aurtemp -c "git clone https://aur.archlinux.org/yay-bin"
 cd yay-bin
