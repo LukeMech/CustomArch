@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+Set -e
 
 pacman -Syu git base-devel archiso --noconfirm
 
@@ -16,21 +17,25 @@ runuser -u maketmp -- git clone https://aur.archlinux.org/yay
 cd yay
 runuser -u maketmp -- makepkg -s --noconfirm
 cp *.pkg.tar.zst /repo
+cd ..
 
 if pacman -Qi plymouth &>/dev/null; then PlymouthInstalled=1; else PlymouthInstalled=0; fi
 runuser -u maketmp -- git clone https://aur.archlinux.org/plymouth
 cd plymouth
 runuser -u maketmp -- makepkg -si --noconfirm
 cp *.pkg.tar.zst /repo
+cd ..
 
 runuser -u maketmp -- git clone https://aur.archlinux.org/gdm-plymouth
 cd gdm-plymouth
 runuser -u maketmp -- makepkg -s --noconfirm
 cp *.pkg.tar.zst /repo
+cd ..
 
-repo-add /repo/custom.db.tar.gz /repo/*
+repo-add /repo/aur-local.db.tar.gz /repo/*
 
-if [ $PlymouthInstalled -eq 0 ]; then pacman -Rsnuc plymouth --noconfirm; fi
+if [ $PlymouthInstalled -eq 0 ]; then pacman -Rns plymouth --noconfirm; fi
+pacman -Qdtq | pacman -Rns -
 
 # Make ISO
 mkarchiso -v -w /archiso -o /lukeMechArch /workingDir/archFiles
