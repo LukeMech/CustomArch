@@ -26,12 +26,13 @@ squashfs-tools
 
 nano
 git
-networkmanager
 
 # Gnome
 
 xf86-video-ati
 xf86-video-amdgpu
+networkmanager
+xorg
 mesa
 gnome-console
 nautilus
