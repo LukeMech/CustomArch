@@ -4,24 +4,21 @@ mkdir /repo
 
 git clone https://aur.archlinux.org/yay-bin
 cd yay-bin
-source PKGBUILD && pacman -Syu --noconfirm --needed --asdeps "${makedepends[@]}" "${depends[@]}"
-makepkg --asroot
+makepkg -s --asroot
 cp *.pkg.tar.zst /repo
 cd ..
 rm -rf yay-bin 
 
 git clone https://aur.archlinux.org/plymouth
 cd plymouth
-source PKGBUILD && pacman -Syu --noconfirm --needed --asdeps "${makedepends[@]}" "${depends[@]}
-makepkg --asroot
+makepkg -s --asroot
 cp *.pkg.tar.zst /repo
 cd ..
 rm -rf plymouth
 
 git clone https://aur.archlinux.org/gdm-plymouth
 cd gdm-plymouth
-source PKGBUILD && pacman -Syu --noconfirm --needed --asdeps "${makedepends[@]}" "${depends[@]}
-makepkg --asroot
+makepkg -s --asroot
 cp *.pkg.tar.zst /repo
 cd ..
 rm -rf gdm-plymouth
