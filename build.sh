@@ -18,7 +18,7 @@ cd yay-bin
 runuser -u maketmp -- makepkg -si --noconfirm
 cp *.pkg.tar.zst /repo
 
-if pacman -Qi yay-bin &>/dev/null; then PlymouthInstalled=1; else PlymouthInstalled=0; fi
+if pacman -Qi plymouth &>/dev/null; then PlymouthInstalled=1; else PlymouthInstalled=0; fi
 runuser -u maketmp -- git clone https://aur.archlinux.org/plymouth
 cd plymouth
 runuser -u maketmp -- makepkg -si --noconfirm
@@ -34,7 +34,7 @@ repo-add /repo/custom.db.tar.gz /repo/*
 
 if [ $YayInstalled -eq 0 ]; then pacman -Rsnc yay-bin --noconfirm; fi
 if [ $PlymouthInstalled -eq 0 ]; then pacman -Rsnc plymouth --noconfirm; fi
-if [ $GDMPlymouthInstalled -eq 0 ]; then pacman -Rsnc gdm-plymouth --noconfirm; fi
+if [ $GDMPlymouthInstalled -eq 0 ]; then pacman -Rsnc libgdm-plymouth --noconfirm; fi
 
 # Make ISO
 mkarchiso -v -w /archiso -o /lukeMechArch /workingDir/archFiles
