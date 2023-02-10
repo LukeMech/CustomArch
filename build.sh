@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+BASEDIR=$(dirname "$0")
+
 pacman -Syu archiso git base-devel --noconfirm
 mkdir /repo
 
@@ -22,5 +25,5 @@ cp *.pkg.tar.zst /repo
 
 userdel maketmp
 
+mkarchiso -v -w /archiso -o /build $BASEDIR/archFiles; 
 repo-add /repo/custom.db.tar.gz /repo/*
-mkarchiso -v -w /archiso -o /build /lukemecharch/archFiles

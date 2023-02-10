@@ -15,8 +15,6 @@ jobs:
 
     - name: Clone code
       uses: actions/checkout@main
-      with:
-        path: /lukemecharch
 
     - name: Get some info
       id: info
