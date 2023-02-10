@@ -21,7 +21,7 @@ jobs:
       run: |
         echo "num=$(date +'%y.%m-')" >> $GITHUB_OUTPUT
         echo "sha=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
-        echo $GITHUB_SHA
+        echo $GITHUB_SHA | cut -c1-7
 
     - name: Install packages
       run: pacman -Syu archiso --noconfirm
