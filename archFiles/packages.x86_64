@@ -8,7 +8,6 @@ mkinitcpio
 mkinitcpio-archiso
 base
 efibootmgr
-systemd-boot
 systemd
 
 # Filesystems
