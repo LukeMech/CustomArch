@@ -6,7 +6,7 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     container:
       image: archlinux
       options: --cap-add SYS_ADMIN --security-opt apparmor:unconfined
