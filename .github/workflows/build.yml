@@ -16,16 +16,19 @@ jobs:
     - name: Clone code
       uses: actions/checkout@main
 
-    - name: Build ISO
+    - name: Build AUR packages
+      run: sh ./scripts/pullFromAur.sh
+
+    - name: Create ISO
       run: sh build.sh
 
-    - name: Get date and commit number
+    - name: Get date & commit number
       id: info
       run: |
         echo "num=$(date +'%y.%m')" >> $GITHUB_OUTPUT
         echo "sha=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
 
-    - name: Add commit number to ISO name
+    - name: Rename ISO
       run: |
         cd /lukeMechArch
         mv *.iso "LukeMechArch ${{ steps.info.outputs.num }} (${{ steps.info.outputs.sha }}).iso"
