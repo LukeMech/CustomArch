@@ -3,7 +3,7 @@ set -e
 
 # Install required dependencies
 echo "=> [INFO] Installing archiso..."
-pacman -Syu archiso --noconfirm
+pacman -Syu archiso --noconfirm --needed
 
 # Make ISO
 echo "=> [INFO] Building image using archiso..."

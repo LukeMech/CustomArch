@@ -3,7 +3,7 @@ set -e
 
 # Install required dependencies
 echo "=> [INFO] Innstalling git and base-devel..."
-pacman -Syu git base-devel --noconfirm
+pacman -Syu git base-devel --noconfirm --needed
 
 # Create temp user and working dir
 echo "=> [INFO] Creating temp user and dirs..."
