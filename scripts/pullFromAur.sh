@@ -8,9 +8,9 @@ pacman -Syu git base-devel --noconfirm --needed
 # Create temp user and working dir
 echo "=> [INFO] Creating temp user and dirs..."
 rm -rf /repo || true
-rm -rf /workingDir || true
 mkdir /repo
 userdel -r maketmp || true
+rm -rf /workingDir || true
 useradd -m -d /workingDir maketmp 
 echo "maketmp ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 runuser -u maketmp -- mkdir /workingDir/archFiles
