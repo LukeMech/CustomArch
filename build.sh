@@ -1,4 +1,4 @@
-pacman -Syu archiso git --noconfirm
+pacman -Syu archiso git base-devel --noconfirm
 
 mkdir /repo
 
