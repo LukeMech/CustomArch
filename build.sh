@@ -1,22 +1,29 @@
-mkdir /repo
+pacman -Syu archiso git --noconfirm
 
-git clone https://aur.archlinux.org/yay-bin
+mkdir /repo
+useradd --shell=/bin/false aur-temp && usermod -L aur-temp
+
+USER aur-temp
+runuser -l aur-temp -c git clone https://aur.archlinux.org/yay-bin
 cd yay-bin
-makepkg
+source PKGBUILD && pacman -Syu --noconfirm --needed --asdeps "${makedepends[@]}" "${depends[@]}"
+runuser -l aur-temp -c makepkg
 cp *.pkg.tar.zst /repo
 cd ..
 rm -rf yay-bin 
 
-git clone https://aur.archlinux.org/plymouth
-cd ../plymouth
-makepkg
+runuser -l aur-temp -c git clone https://aur.archlinux.org/plymouth
+cd plymouth
+source PKGBUILD && pacman -Syu --noconfirm --needed --asdeps "${makedepends[@]}" "${depends[@]}
+runuser -l aur-temp -c makepkg
 cp *.pkg.tar.zst /repo
 cd ..
 rm -rf plymouth
 
-git clone https://aur.archlinux.org/gdm-plymouth
-cd ../gdm-plymouth
-makepkg
+runuser -l aur-temp -c git clone https://aur.archlinux.org/gdm-plymouth
+cd gdm-plymouth
+source PKGBUILD && pacman -Syu --noconfirm --needed --asdeps "${makedepends[@]}" "${depends[@]}
+runuser -l aur-temp -c makepkg
 cp *.pkg.tar.zst /repo
 cd ..
 rm -rf gdm-plymouth
