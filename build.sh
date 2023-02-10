@@ -6,7 +6,7 @@ mkdir /repo
 
 # Aur packages clone, makepkg and add to repo
 useradd -m -d /maketmp maketmp
-maketmp ALL=(ALL) NOPASSWD:ALL >> /etc/sudoers
+echo "maketmp ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 cd /maketmp
 
 runuser -u maketmp -- git clone https://aur.archlinux.org/yay-bin
