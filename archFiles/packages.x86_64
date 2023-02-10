@@ -7,7 +7,7 @@ linux
 mkinitcpio
 mkinitcpio-archiso
 base
-efibootmgr
+grub
 systemd
 pv
 
