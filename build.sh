@@ -1,7 +1,7 @@
 pacman -Syu archiso git base-devel --noconfirm
 mkdir /repo
 
-useradd maketmp
+useradd -m -d /maketmp maketmp
 
 runuser -u maketmp "git clone https://aur.archlinux.org/yay-bin && cd yay-bin && makepkg -s && ls"
 cp *.pkg.tar.zst /repo
