@@ -2,7 +2,7 @@
 set -e
 
 # Run pulling from aur
-sh /scripts/pullFromAur.sh
+sh scripts/pullFromAur.sh
 
 # Run build
 sh scripts/build.sh
