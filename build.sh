@@ -13,7 +13,7 @@ cd /workingDir/aurPackages
 
 # Aur packages clone, makepkg and add to repo
 runuser -u maketmp -- git clone https://aur.archlinux.org/yay
-cd yay-bin 
+cd yay
 runuser -u maketmp -- makepkg -s --noconfirm
 cp *.pkg.tar.zst /repo
 
