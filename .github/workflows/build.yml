@@ -8,7 +8,7 @@ jobs:
 
     runs-on: ubuntu-latest
     container:
-      image: docker://archlinux
+      image: archlinux
       options: --cap-add SYS_ADMIN --security-opt apparmor:unconfined
     
     steps:  
