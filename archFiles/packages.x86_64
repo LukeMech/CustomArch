@@ -22,14 +22,15 @@ ntfs-3g
 
 nano
 git
+networkmanager
 
 # Gnome
 
-networkmanager
-gnome-console
-nautilus
+#gnome-console
+#nautilus
 
 # Aur
 
 yay
-gdm-plymouth
+plymouth
+#gdm-plymouth
