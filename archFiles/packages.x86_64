@@ -34,10 +34,8 @@ xf86-video-intel
 mesa
 gnome-console
 nautilus
+gdm
 
 # Aur
 
-gdm-plymouth
-
 yay
-plymouth
