@@ -22,6 +22,9 @@ jobs:
         echo "num=$(date +'%y.%m-')" >> $GITHUB_OUTPUT
         echo "sha=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
 
+    - name: Download AUR packages
+      run: sh downloadAur.sh
+
     - name: Build ISO
       run: sh build.sh
 
