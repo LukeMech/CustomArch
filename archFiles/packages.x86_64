@@ -33,10 +33,12 @@ xf86-video-amdgpu
 xf86-video-intel
 mesa
 gnome-console
+gnome-shell
 nautilus
-gdm
 
 # Aur
 
 yay
+
+gdm-plymouth
 plymouth
