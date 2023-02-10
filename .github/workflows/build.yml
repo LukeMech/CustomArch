@@ -20,7 +20,8 @@ jobs:
       id: info
       run: |
         echo "num=$(date +'%y.%m-')" >> $GITHUB_OUTPUT
-        echo "sha=$(echo '$GITHUB_SHA' | cut -c1-7)" >> $GITHUB_OUTPUT
+        echo "sha=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
+        echo $GITHUB_SHA
 
     - name: Install packages
       run: pacman -Syu archiso --noconfirm
