@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 BASEDIR=$(dirname "$0")
 
-pacman -Syu archiso git base-devel --noconfirm
+sudo pacman -Syu archiso git base-devel --noconfirm
 mkdir /repo
 
 # Aur packages clone, makepkg and add to repo
 useradd -m -d /maketmp maketmp
+maketmp ALL=(ALL) NOPASSWD:ALL >> /etc/sudoers
 cd /maketmp
 
 runuser -u maketmp -- git clone https://aur.archlinux.org/yay-bin
@@ -25,5 +26,5 @@ cp *.pkg.tar.zst /repo
 
 userdel maketmp
 
-mkarchiso -v -w /archiso -o /build $BASEDIR/archFiles; 
 repo-add /repo/custom.db.tar.gz /repo/*
+mkarchiso -v -w /archiso -o /build "$BASEDIR/archFiles"; 
