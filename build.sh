@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 BASEDIR=$(dirname "$0")
 
-sudo pacman -Syu archiso git base-devel --noconfirm
+pacman -Syu archiso git base-devel --noconfirm
 mkdir /repo
 
 # Aur packages clone, makepkg and add to repo
