@@ -22,7 +22,6 @@ runuser -u maketmp -- git clone https://aur.archlinux.org/gdm-plymouth
 cd gdm-plymouth
 runuser -u maketmp -- makepkg -s --noconfirm
 cp *.pkg.tar.zst /repo
-pacman -Rsnc plymouth --coconfirm
 
 userdel maketmp
 
