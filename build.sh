@@ -2,12 +2,11 @@ pacman -Syu archiso git --noconfirm
 
 mkdir /repo
 useradd -m aurtemp
-cd /home/aurtemp
 
 runuser -l aurtemp -c "git clone https://aur.archlinux.org/yay-bin"
 cd yay-bin
 ls
-source PKGBUILD && pacman -Syu --noconfirm --needed --asdeps "${makedepends[@]}" "${depends[@]}"
+source "./PKGBUILD" && pacman -Syu --noconfirm --needed --asdeps "${makedepends[@]}" "${depends[@]}"
 runuser -l aurtemp -c makepkg
 cp *.pkg.tar.zst /repo
 cd ..
