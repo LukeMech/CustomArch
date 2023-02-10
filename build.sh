@@ -3,12 +3,15 @@ mkdir /repo
 
 useradd -m -d /maketmp maketmp
 
-runuser -u maketmp "git clone https://aur.archlinux.org/yay-bin && cd yay-bin && makepkg -s && ls"
+runuser -u maketmp git "clone https://aur.archlinux.org/yay-bin" 
+cd yay-bin 
+runuser -u maketmp makepkg -s
+runuser -u maketmp ls
 cp *.pkg.tar.zst /repo
 
-runuser -u maketmp "git clone https://aur.archlinux.org/plymouth"
+runuser -u maketmp git "clone https://aur.archlinux.org/plymouth"
 cd plymouth
-runuser -u maketmp "makepkg -s"
+runuser -u maketmp makepkg -s
 cp *.pkg.tar.zst /repo
 
 git clone https://aur.archlinux.org/gdm-plymouth
