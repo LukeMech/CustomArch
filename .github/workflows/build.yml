@@ -24,14 +24,10 @@ jobs:
 
     - name: Get date & commit number
       id: info
-      run: |
-        echo "num=$(date +'%y.%m')" >> $GITHUB_OUTPUT
-        echo "sha=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
+      run: echo "num=$(date +'%y.%m')" >> $GITHUB_OUTPUT && echo "sha=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
 
     - name: Rename ISO
-      run: |
-        cd /lukeMechArch
-        mv *.iso "LukeMechArch ${{ steps.info.outputs.num }} (${{ steps.info.outputs.sha }}).iso"
+      run: mv /lukeMechArch/*.iso "/lukeMechArch/LukeMechArch ${{ steps.info.outputs.num }} (${{ steps.info.outputs.sha }}).iso"
 
     - name: Upload ISO
       uses: actions/upload-artifact@main

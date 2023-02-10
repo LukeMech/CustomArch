@@ -9,3 +9,5 @@ sh scripts/build.sh
 
 # Run cleanup
 sh scripts/cleanup.sh
+
+echo "=> [INFO] ISO created inside path '/lukeMechArch' ;)"
