@@ -6,6 +6,7 @@ cd /home/aurtemp
 
 runuser -l aurtemp -c "git clone https://aur.archlinux.org/yay-bin"
 cd yay-bin
+ls
 source PKGBUILD && pacman -Syu --noconfirm --needed --asdeps "${makedepends[@]}" "${depends[@]}"
 runuser -l aurtemp -c makepkg
 cp *.pkg.tar.zst /repo
