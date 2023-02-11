@@ -32,6 +32,9 @@ git
 xf86-video-ati
 xf86-video-amdgpu
 networkmanager
+
+gnome
+
 mesa
 gnome-console
 nautilus
@@ -41,5 +44,5 @@ nautilus
 
 yay
 
-gdm-plymouth
+#gdm-plymouth
 plymouth
