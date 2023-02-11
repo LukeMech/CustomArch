@@ -6,3 +6,6 @@ What=tmpfs
 Where=/etc/pacman.d/gnupg
 Type=tmpfs
 Options=mode=0755
+
+[Install]
+WantedBy=multi-user.target
