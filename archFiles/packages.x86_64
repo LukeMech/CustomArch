@@ -41,6 +41,6 @@ xf86-video-intel
 gdm-plymouth
 gnome-console
 gnome-keyring
+gnome-menus
 nautilus
 xdg-user-dirs
-gnome
