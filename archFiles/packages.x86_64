@@ -16,7 +16,7 @@ mkinitcpio
 mkinitcpio-archiso
 networkmanager
 ntfs-3g
-gpipewire-audio
+pipewire-audio
 pipewire-pulse
 pipewire-jack
 pipewire-media-session
