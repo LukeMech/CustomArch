@@ -8,14 +8,13 @@ linux
 mkinitcpio
 mkinitcpio-archiso
 base
-dhcpd
+dhcpcd
 dhclient
 efibootmgr
 syslinux
 systemd
 reflector
 nmap
-man
 man-db
 zsh
 btrfs-progs
