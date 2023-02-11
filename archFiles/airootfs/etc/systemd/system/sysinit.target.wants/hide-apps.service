@@ -3,6 +3,7 @@ Description=Hide some desktop apps
 
 [Service]
 Type=oneshot 
+RemainAfterExit=yes
 
 # Hide some apps
 ExecStart=/usr/bin/desktop-file-edit /usr/share/applications/avahi-discover.desktop --set-key "NoDisplay" --set-value "true"
