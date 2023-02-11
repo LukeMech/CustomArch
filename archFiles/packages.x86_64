@@ -9,6 +9,7 @@ e2fsprogs
 efibootmgr
 exfatprogs
 gst-plugin-pipewire
+gst-plugins-good
 intel-ucode
 linux
 linux-firmware

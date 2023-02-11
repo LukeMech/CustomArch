@@ -4,6 +4,9 @@ Description=Configure gnome desktop
 [Service]
 Type=oneshot
 
+# Some settings tweaks
+ExecStart=gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+
 # Hide some apps
 ExecStart=desktop-file-edit /usr/share/applications/avahi-discover.desktop --set-key "NoDisplay" --set-value "true"
 ExecStart=desktop-file-edit /usr/share/applications/bssh.desktop --set-key "NoDisplay" --set-value "true"
