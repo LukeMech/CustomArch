@@ -1,6 +1,5 @@
 # Base
 amd-ucode
-alsa-utils
 base
 base-devel
 bluez
@@ -17,7 +16,8 @@ mkinitcpio
 mkinitcpio-archiso
 networkmanager
 ntfs-3g
-pipewire-audio
+gpipewire-audio
+pipewire-pulse
 pipewire-jack
 pipewire-media-session
 squashfs-tools
