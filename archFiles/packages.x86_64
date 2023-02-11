@@ -1,7 +1,6 @@
 # Base
 amd-ucode
 base
-base-devel
 bluez
 btrfs-progs
 dosfstools
@@ -20,6 +19,7 @@ networkmanager
 ntfs-3g
 pipewire-jack
 pipewire-pulse
+sudo
 squashfs-tools
 syslinux
 systemd
