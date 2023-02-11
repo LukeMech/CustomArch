@@ -1,46 +1,44 @@
 # Base
-
 amd-ucode
 alsa-utils
-intel-ucode
-linux-firmware
-linux
-mkinitcpio
-mkinitcpio-archiso
 base
 base-devel
-dhcpcd
-efibootmgr
-syslinux
-systemd
-reflector
-man-db
+bluez
 btrfs-progs
+dhcpcd
 dosfstools
-exfatprogs
 e2fsprogs
-ntfs-3g
-squashfs-tools
-
-# Apps
-
-nano
-git
-
-# Gnome
-
-xf86-video-ati
-xf86-video-intel
-xf86-video-amdgpu
+efibootmgr
+exfatprogs
+intel-ucode
+linux
+linux-firmware
+man-db
+mkinitcpio
+mkinitcpio-archiso
 networkmanager
 network-manager-applet
+ntfs-3g
+reflector
+squashfs-tools
+syslinux
+systemd
+
+# Tools
+git
+nano
+yay-bin
+
+# Display
 mesa
-gnome-console
-nautilus
-
-# Aur
-
-yay
-
-gdm-plymouth
 plymouth
+xf86-video-amdgpu
+xf86-video-ati
+xf86-video-intel
+
+# Gnome
+gdm-plymouth
+gnome-console
+gnome-control-center
+power-profiles-daemon
+nautilus

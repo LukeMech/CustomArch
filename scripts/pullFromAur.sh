@@ -22,8 +22,8 @@ cd /workingDir/aurPackages
 echo "=> [INFO] Cloning and building packages..."
 
 # Yay
-runuser -u maketmp -- git clone https://aur.archlinux.org/yay
-cd yay
+runuser -u maketmp -- git clone https://aur.archlinux.org/yay-bin
+cd yay-bin
 runuser -u maketmp -- makepkg -s --noconfirm
 cp *.pkg.tar.zst /repo
 cd ..
