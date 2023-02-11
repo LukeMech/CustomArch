@@ -8,6 +8,7 @@ dosfstools
 e2fsprogs
 efibootmgr
 exfatprogs
+gst-plugin-pipewire
 intel-ucode
 linux
 linux-firmware
@@ -16,9 +17,7 @@ mkinitcpio
 mkinitcpio-archiso
 networkmanager
 ntfs-3g
-pipewire-audio
 pipewire-jack
-pipewire-media-session
 pipewire-pulse
 squashfs-tools
 syslinux
