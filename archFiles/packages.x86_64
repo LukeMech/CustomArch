@@ -17,9 +17,9 @@ mkinitcpio-archiso
 networkmanager
 ntfs-3g
 pipewire-audio
-pipewire-pulse
 pipewire-jack
 pipewire-media-session
+pipewire-pulse
 squashfs-tools
 syslinux
 systemd
