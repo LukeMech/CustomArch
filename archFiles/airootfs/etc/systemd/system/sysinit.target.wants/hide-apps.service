@@ -8,6 +8,8 @@ Type=oneshot
 ExecStart=desktop-file-edit /usr/share/applications/avahi-discover.desktop --set-key "NoDisplay" --set-value "true"
 ExecStart=desktop-file-edit /usr/share/applications/bssh.desktop --set-key "NoDisplay" --set-value "true"
 ExecStart=desktop-file-edit /usr/share/applications/bvnc.desktop --set-key "NoDisplay" --set-value "true"
+ExecStart=desktop-file-edit /usr/share/applications/qv4l2.desktop --set-key "NoDisplay" --set-value "true"
+ExecStart=desktop-file-edit /usr/share/applications/qvidcap.desktop --set-key "NoDisplay" --set-value "true"
 ExecStart=desktop-file-edit /usr/share/applications/org.gnome.Console.desktop --set-key "Categories" --set-value "GNOME"
 
 [Install]
