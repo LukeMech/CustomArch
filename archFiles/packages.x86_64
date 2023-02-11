@@ -17,7 +17,6 @@ man-db
 mkinitcpio
 mkinitcpio-archiso
 networkmanager
-network-manager-applet
 ntfs-3g
 reflector
 squashfs-tools
@@ -40,3 +39,4 @@ xf86-video-intel
 gdm-plymouth
 gnome-console
 nautilus
+xdg-user-dirs
