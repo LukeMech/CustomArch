@@ -17,17 +17,16 @@ jobs:
       uses: actions/checkout@main
 
     - name: Build AUR packages
-      run: sh scripts/pullFromAur.sh
+      id: info
+      run: |
+        sh scripts/pullFromAur.sh
+        echo "num=$(date +'%y.%m')" >> $GITHUB_OUTPUT 
+        echo "sha=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
 
     - name: Create ISO
-      run: sh scripts/build.sh
-
-    - name: Get date & commit number
-      id: info
-      run: echo "num=$(date +'%y.%m')" >> $GITHUB_OUTPUT && echo "sha=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
-
-    - name: Rename ISO
-      run: mv /lukeMechArch/*.iso "/lukeMechArch/LukeMechArch ${{ steps.info.outputs.num }} (${{ steps.info.outputs.sha }}).iso"
+      run: |
+        sh scripts/build.sh
+        mv /lukeMechArch/*.iso "/lukeMechArch/LukeMechArch ${{ steps.info.outputs.num }} (${{ steps.info.outputs.sha }}).iso"        
 
     - name: Upload ISO
       uses: actions/upload-artifact@main
