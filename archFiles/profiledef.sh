@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="LukeMechArch"
+iso_name="lukemech"
 iso_label="LukeMechArch_$(date +%y.%m)"
 iso_publisher="LukeMech <https://LukeMech.github.io>"
 iso_application="LukeMechArch Live CD"
