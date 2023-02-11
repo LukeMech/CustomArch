@@ -27,7 +27,6 @@ systemd
 # Tools
 git
 nano
-yay-bin
 
 # Display
 mesa
@@ -42,4 +41,5 @@ gnome-console
 gnome-keyring
 gnome-menus
 nautilus
+pamac-nosnap
 power-profiles-daemon

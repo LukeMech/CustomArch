@@ -21,9 +21,19 @@ cd /workingDir/aurPackages
 # Aur packages - clone, make
 echo "=> [INFO] Cloning and building packages..."
 
-# Yay
-runuser -u maketmp -- git clone https://aur.archlinux.org/yay-bin
-cd yay-bin
+# Pamac
+runuser -u maketmp -- git clone https://aur.archlinux.org/archlinux-appstream-data-pamac
+cd archlinux-appstream-data-pamac
+runuser -u maketmp -- makepkg -si --noconfirm
+cp *.pkg.tar.zst /repo
+cd ..
+runuser -u maketmp -- git clone https://aur.archlinux.org/libpamac-nosnap
+cd libpamac-nosnap
+runuser -u maketmp -- makepkg -si --noconfirm
+cp *.pkg.tar.zst /repo
+cd ..
+runuser -u maketmp -- git clone https://aur.archlinux.org/pamac-nosnap
+cd pamac-nosnap
 runuser -u maketmp -- makepkg -s --noconfirm
 cp *.pkg.tar.zst /repo
 cd ..
@@ -34,8 +44,6 @@ cd plymouth
 runuser -u maketmp -- makepkg -si --noconfirm
 cp *.pkg.tar.zst /repo
 cd ..
-
-# Gnome Display Manager - plymouth
 runuser -u maketmp -- git clone https://aur.archlinux.org/gdm-plymouth
 cd gdm-plymouth
 runuser -u maketmp -- makepkg -s --noconfirm
