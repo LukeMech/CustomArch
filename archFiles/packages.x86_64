@@ -1,20 +1,23 @@
 # Base
 
 amd-ucode
+alsa-utils
 intel-ucode
 linux-firmware
 linux
 mkinitcpio
 mkinitcpio-archiso
 base
+dhcpd
+dhclient
 efibootmgr
 syslinux
 systemd
-pv
 reflector
-
-# Filesystems
-
+nmap
+man
+man-db
+zsh
 btrfs-progs
 dosfstools
 exfatprogs
