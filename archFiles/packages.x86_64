@@ -10,14 +10,11 @@ mkinitcpio-archiso
 base
 base-devel
 dhcpcd
-dhclient
 efibootmgr
 syslinux
 systemd
 reflector
-nmap
 man-db
-zsh
 btrfs-progs
 dosfstools
 exfatprogs
@@ -35,6 +32,7 @@ git
 xf86-video-ati
 xf86-video-amdgpu
 networkmanager
+network-manager-applet
 mesa
 gnome-console
 nautilus
