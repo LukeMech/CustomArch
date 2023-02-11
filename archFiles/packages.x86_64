@@ -8,6 +8,7 @@ linux
 mkinitcpio
 mkinitcpio-archiso
 base
+base-devel
 dhcpcd
 dhclient
 efibootmgr

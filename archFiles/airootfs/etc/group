@@ -1,14 +1,2 @@
 root:x:0:root
-nobody:x:65534:
-systemd-journal:x:983:
-dbus:x:81:
-systemd-coredump:x:981:
-systemd-network:x:980:
-systemd-oom:x:979:
-systemd-journal-remote:x:978:
-systemd-resolve:x:977:
-systemd-timesync:x:976:
-uuidd:x:68:
 liveuser:x:1000:
-gdm:x:120:
-git:x:971:
