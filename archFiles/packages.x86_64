@@ -20,7 +20,6 @@ ntfs-3g
 pipewire-audio
 pipewire-jack
 pipewire-media-session
-reflector
 squashfs-tools
 syslinux
 systemd
@@ -43,4 +42,3 @@ gnome-console
 gnome-keyring
 gnome-menus
 nautilus
-xdg-user-dirs
