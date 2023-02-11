@@ -5,7 +5,6 @@ base
 base-devel
 bluez
 btrfs-progs
-dhcpcd
 dosfstools
 e2fsprogs
 efibootmgr
@@ -18,6 +17,9 @@ mkinitcpio
 mkinitcpio-archiso
 networkmanager
 ntfs-3g
+pipewire-audio
+pipewire-jack
+pipewire-media-session
 reflector
 squashfs-tools
 syslinux
@@ -38,5 +40,6 @@ xf86-video-intel
 # Gnome
 gdm-plymouth
 gnome-console
+gnome-keyring
 nautilus
 xdg-user-dirs
