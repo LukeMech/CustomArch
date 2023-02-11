@@ -1,1 +1,14 @@
-/usr/lib/systemd/system/hide-apps.service
+[Unit]
+Description=Hide some desktop apps
+
+[Service]
+Type=oneshot 
+
+# Hide some apps
+ExecStart=desktop-file-edit /usr/share/applications/avahi-discover.desktop --set-key "NoDisplay" --set-value "true"
+ExecStart=desktop-file-edit /usr/share/applications/bssh.desktop --set-key "NoDisplay" --set-value "true"
+ExecStart=desktop-file-edit /usr/share/applications/bvnc.desktop --set-key "NoDisplay" --set-value "true"
+ExecStart=desktop-file-edit /usr/share/applications/org.gnome.Console.desktop --set-key "Categories" --set-value "GNOME"
+
+[Install]
+WantedBy=sysinit.target
