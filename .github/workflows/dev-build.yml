@@ -1,4 +1,4 @@
-name: Check building
+name: Build DEV version
 
 on:
   push:
