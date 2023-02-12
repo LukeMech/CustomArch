@@ -1,13 +1,12 @@
-name: Build ISO
+name: Check building
 
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - "main"
+    branches-ignore:    
+      - 'main'
 
 jobs:
-  build:
+  check:
 
     runs-on: ubuntu-latest
     container:
@@ -26,12 +25,20 @@ jobs:
         echo "num=$(date +'%y.%m')" >> $GITHUB_OUTPUT 
         echo "sha=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
 
+    - name: Check if all ISO packages are available
+      run: |
+        rm -rf /etc/pacman.conf
+        cp archFiles/pacman.conf /etc/
+        pacman -Syu - < archFiles/bootstrap_packages.x86_64 --noconfirm
+        pacman -Syu - < archFiles/packages.x86_64 --noconfirm
+
     - name: Create ISO
       run: |
         sh scripts/build.sh
+        mv /lukeMechArch/*.iso "/lukeMechArch/LukeMechArch-${{ steps.info.outputs.num }}-DEV-${{ steps.info.outputs.sha }}.iso"        
 
     - name: Upload ISO
       uses: actions/upload-artifact@main
       with:
-        name: LukeMechArch ${{ steps.info.outputs.num }} (${{ steps.info.outputs.sha }})
+        name: LukeMechArch ${{ steps.info.outputs.num }} DEV - ${{ steps.info.outputs.sha }}
         path: /lukeMechArch
