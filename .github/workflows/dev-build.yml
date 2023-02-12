@@ -51,8 +51,8 @@ jobs:
       run: |
         rm -rf /etc/pacman.conf
         cp archFiles/pacman.conf /etc/
-        sed -i '/#/d' bootstrap_packages.x86_64
-        sed -i '/#/d' packages.x86_64
+        sed -i '/#/d' archFiles/bootstrap_packages.x86_64
+        sed -i '/#/d' archFiles/packages.x86_64
         pacman -Syu - < archFiles/bootstrap_packages.x86_64 --noconfirm
         pacman -Syu - < archFiles/packages.x86_64 --noconfirm
 
