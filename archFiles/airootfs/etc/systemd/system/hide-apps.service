@@ -1,6 +1,5 @@
 [Unit]
 Description=Hide some desktop apps
-Before=NetworkManager.service
 
 [Service]
 Type=oneshot 
@@ -12,6 +11,7 @@ ExecStart=/bin/desktop-file-edit /usr/share/applications/bssh.desktop --set-key 
 ExecStart=/bin/desktop-file-edit /usr/share/applications/bvnc.desktop --set-key "NoDisplay" --set-value "true"
 ExecStart=/bin/desktop-file-edit /usr/share/applications/qv4l2.desktop --set-key "NoDisplay" --set-value "true"
 ExecStart=/bin/desktop-file-edit /usr/share/applications/qvidcap.desktop --set-key "NoDisplay" --set-value "true"
+ExecStart=/bin/desktop-file-edit /usr/share/applications/org.gnome.Extensions.desktop --set-key "NoDisplay" --set-value "true"
 ExecStart=/bin/desktop-file-edit /usr/share/applications/org.gnome.Console.desktop --set-key "Categories" --set-value "GNOME"
 
 [Install]
