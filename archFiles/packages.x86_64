@@ -30,13 +30,14 @@ nano
 
 # Display
 mesa
-plymouth
+#plymouth
 xf86-video-amdgpu
 xf86-video-ati
 xf86-video-intel
 
 # Gnome
-gdm-plymouth
+#gdm-plymouth
+gdm
 gnome-console
 gnome-keyring
 gnome-menus

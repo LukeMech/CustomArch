@@ -14,4 +14,4 @@ ExecStart=/bin/desktop-file-edit /usr/share/applications/qvidcap.desktop --set-k
 ExecStart=/bin/desktop-file-edit /usr/share/applications/org.gnome.Console.desktop --set-key "Categories" --set-value "GNOME"
 
 [Install]
-WantedBy=sysinit.target
+WantedBy=multi-user.target
