@@ -1,4 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=PinToTaskbar
-Exec=gsettings set org.gnome.shell favorite-apps "['org.gnome.Console.desktop', 'installer.desktop']"

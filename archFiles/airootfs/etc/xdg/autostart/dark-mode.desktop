@@ -1,4 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=ApplyDarkMode
-Exec=gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'

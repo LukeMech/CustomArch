@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Reboot
+Exec=sudo reboot
+Icon=system-reboot-symbolic
