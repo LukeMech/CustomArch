@@ -74,6 +74,12 @@ jobs:
         path: /repo
         key: aur-packages
 
+    - name: Get commit and date
+      id: info
+      run: |
+        echo "num=$(date +'%y.%m')" >> $GITHUB_OUTPUT 
+        echo "sha=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
+
     - name: Create ISO
       run: |
         sh scripts/build.sh
