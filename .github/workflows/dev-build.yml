@@ -6,7 +6,7 @@ on:
       - "main"
 
 jobs:
-  build-upload:
+  build:
 
     runs-on: ubuntu-latest
     container:
@@ -28,9 +28,39 @@ jobs:
     - name: Create ISO
       run: |
         sh scripts/build.sh
+        mv /lukeMechArch/*.iso "/lukeMechArch/LukeMechArch-${{ steps.info.outputs.num }}-DEV-${{ steps.info.outputs.sha }}.iso"  
+
+    - name: Mount cache
+      uses: actions/cache@main
+      with:
+        path: /iso
+        key: Builded ISO
+
+    - name: Add ISO to cache
+      run: |
+        rm -rf /iso/*
+        cp /lukeMechArch/* /iso
+
+  upload:
+
+    runs-on: ubuntu-latest
+    
+    steps:  
+
+    - name: Mount cache
+      uses: actions/cache@main
+      with:
+        path: /iso
+        key: Builded ISO
+
+    - name: Get ISO name
+      id: info
+      run: |
+        cd /iso
+        echo "name=$(ls)" >> $GITHUB_OUTPUT 
 
     - name: Upload ISO
       uses: actions/upload-artifact@main
       with:
-        name: LukeMechArch ${{ steps.info.outputs.num }} (${{ steps.info.outputs.sha }})
-        path: /lukeMechArch
+        name: ${{ steps.info.outputs.name }}
+        path: /iso

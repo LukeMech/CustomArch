@@ -1,0 +1,29 @@
+name: Upload ISO from cache
+
+on:
+  workflow_dispatch:
+
+jobs:
+  upload:
+
+    runs-on: ubuntu-latest
+    
+    steps:  
+
+    - name: Mount cache
+      uses: actions/cache@main
+      with:
+        path: /iso
+        key: Builded ISO
+
+    - name: Get ISO name
+      id: info
+      run: |
+        cd /iso
+        echo "name=$(ls)" >> $GITHUB_OUTPUT 
+
+    - name: Upload ISO
+      uses: actions/upload-artifact@main
+      with:
+        name: ${{ steps.info.outputs.name }}
+        path: /iso
