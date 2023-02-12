@@ -26,6 +26,6 @@ jobs:
     - name: Check if all ISO packages are available
       run: |
         rm -rf /etc/pacman.conf
-        mv archFiles/pacman.conf /etc/
+        cp archFiles/pacman.conf /etc/
         pacman -Syu - < archFiles/bootstrap_packages.x86_64
         pacman -Syu - < archFiles/packages.x86_64
