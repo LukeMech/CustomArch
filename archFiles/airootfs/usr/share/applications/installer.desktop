@@ -2,4 +2,4 @@
 Type=Application
 Name=Installer
 Exec=kgx -e 'sudo archinstall'
-Icon=software-update-available-symbolic
+Icon=software-update-urgent-symbolic
