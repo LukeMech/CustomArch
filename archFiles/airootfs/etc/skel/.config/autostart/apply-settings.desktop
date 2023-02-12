@@ -1,4 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=ApplySettings
-Exec=/usr/bin/gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true && /usr/bin/gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/space-wallpaper.jpg
