@@ -32,13 +32,13 @@ jobs:
     - name: Mount cache
       uses: actions/cache@main
       with:
-        path: /iso
+        path: ~/iso
         key: Builded ISO
 
     - name: Add ISO to cache
       run: |
-        rm -rf /iso/*
-        cp /lukeMechArch/* /iso
+        rm -rf ~/iso/*
+        cp /lukeMechArch/* ~/iso
 
   upload:
     needs: build
@@ -50,17 +50,17 @@ jobs:
     - name: Mount cache
       uses: actions/cache@main
       with:
-        path: /iso
+        path: ~/iso
         key: Builded ISO
 
     - name: Get ISO name
       id: info
       run: |
-        cd /iso
+        cd ~/iso
         echo "name=$(ls)" >> $GITHUB_OUTPUT 
 
     - name: Upload ISO
       uses: actions/upload-artifact@main
       with:
         name: ${{ steps.info.outputs.name }}
-        path: /iso
+        path: ~/iso
