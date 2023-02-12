@@ -2,4 +2,4 @@
 Type=Application
 Name=GnomeSettingsTweaks
 
-Exec=sh gsettings-tweaks.sh
+Exec=sh /etc/xdg/autostart/gsettings-tweaks.sh
