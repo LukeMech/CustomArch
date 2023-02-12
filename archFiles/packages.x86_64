@@ -1,33 +1,26 @@
 # Base
 amd-ucode
 base
-base-devel
-bluez
 btrfs-progs
 dosfstools
 e2fsprogs
 efibootmgr
 exfatprogs
+gst-plugin-pipewire
+gst-plugins-good
 intel-ucode
 linux
 linux-firmware
 man-db
 mkinitcpio
 mkinitcpio-archiso
+nano
 networkmanager
 ntfs-3g
-pipewire-audio
 pipewire-jack
-pipewire-media-session
 pipewire-pulse
-squashfs-tools
+sudo
 syslinux
-systemd
-
-# Tools
-git
-nano
-yay-bin
 
 # Display
 mesa
@@ -40,5 +33,3 @@ xf86-video-intel
 gdm-plymouth
 gnome-console
 gnome-keyring
-gnome-menus
-nautilus

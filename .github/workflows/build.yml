@@ -26,7 +26,7 @@ jobs:
     - name: Create ISO
       run: |
         sh scripts/build.sh
-        mv /lukeMechArch/*.iso "/lukeMechArch/LukeMechArch ${{ steps.info.outputs.num }} (${{ steps.info.outputs.sha }}).iso"        
+        mv /lukeMechArch/*.iso "/lukeMechArch/LukeMechArch-${{ steps.info.outputs.num }}-${{ steps.info.outputs.sha }}.iso"        
 
     - name: Upload ISO
       uses: actions/upload-artifact@main

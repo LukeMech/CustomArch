@@ -21,21 +21,12 @@ cd /workingDir/aurPackages
 # Aur packages - clone, make
 echo "=> [INFO] Cloning and building packages..."
 
-# Yay
-runuser -u maketmp -- git clone https://aur.archlinux.org/yay-bin
-cd yay-bin
-runuser -u maketmp -- makepkg -s --noconfirm
-cp *.pkg.tar.zst /repo
-cd ..
-
 # Plymouth
 runuser -u maketmp -- git clone https://aur.archlinux.org/plymouth
 cd plymouth
 runuser -u maketmp -- makepkg -si --noconfirm
 cp *.pkg.tar.zst /repo
 cd ..
-
-# Gnome Display Manager - plymouth
 runuser -u maketmp -- git clone https://aur.archlinux.org/gdm-plymouth
 cd gdm-plymouth
 runuser -u maketmp -- makepkg -s --noconfirm
