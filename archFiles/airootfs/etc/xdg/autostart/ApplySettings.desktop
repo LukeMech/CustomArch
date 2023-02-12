@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=ApplySettings
-Exec=kgx -e "gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true && gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/space.jpg'"
+Exec=kgx -e "gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true && gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/space.jpg' && gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
