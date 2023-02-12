@@ -1,13 +1,12 @@
 name: Build ISO
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - "main"
 
 jobs:
-  build:
+  build-upload:
 
     runs-on: ubuntu-latest
     container:
