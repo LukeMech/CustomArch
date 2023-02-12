@@ -56,7 +56,7 @@ jobs:
         pacman -Syu - < archFiles/packages.x86_64 --noconfirm
 
   create-iso:
-    needs: build-aur
+    needs: check-packages
 
     runs-on: ubuntu-latest
     container:
