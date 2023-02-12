@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Installer
+Exec=kgx -e 'sudo archinstall'
+Icon=software-update-urgent-symbolic

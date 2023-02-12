@@ -1,4 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=SetTapToClik
-Exec=gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true

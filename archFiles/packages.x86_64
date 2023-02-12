@@ -1,5 +1,6 @@
 # Base
 amd-ucode
+archinstall
 base
 btrfs-progs
 dosfstools
@@ -25,6 +26,8 @@ syslinux
 # Display
 mesa
 plymouth
+unclutter
+wmctrl
 xf86-video-amdgpu
 xf86-video-ati
 xf86-video-intel

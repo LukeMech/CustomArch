@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=GnomeSettingsTweaks
+Exec=sh /etc/xdg/autostart/gsettings-tweaks.sh
