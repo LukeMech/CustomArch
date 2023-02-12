@@ -34,7 +34,7 @@ for p in $PACKAGES
 do  
     runuser -u maketmp -- git clone "https://aur.archlinux.org/$p"
     cd "$p"
-    echo "=> [WARNING] $p will be (temporarily) installed!"
+    echo "=> [INFO] $p will be (temporarily) installed!"
     runuser -u maketmp -- makepkg -si --noconfirm
     cp *.pkg.tar.zst /repo
     cd ..
