@@ -6,6 +6,8 @@ dosfstools
 e2fsprogs
 efibootmgr
 exfatprogs
+gst-plugin-pipewire
+gst-plugins-good
 intel-ucode
 linux
 linux-firmware
@@ -15,6 +17,8 @@ mkinitcpio-archiso
 nano
 networkmanager
 ntfs-3g
+pipewire-jack
+pipewire-pulse
 sudo
 syslinux
 
