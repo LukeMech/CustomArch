@@ -1,3 +1,4 @@
+# Base
 amd-ucode
 base
 btrfs-progs
@@ -16,3 +17,19 @@ networkmanager
 ntfs-3g
 sudo
 syslinux
+
+# Display
+mesa
+plymouth
+xf86-video-amdgpu
+xf86-video-ati
+xf86-video-intel
+
+# Gnome
+gdm-plymouth
+gnome-console
+gnome-keyring
+gnome-menus
+nautilus
+pamac-nosnap
+power-profiles-daemon
