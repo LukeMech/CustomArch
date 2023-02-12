@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Installer
+Exec=sudo kgx -e 'archinstall'
