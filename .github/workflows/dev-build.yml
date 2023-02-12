@@ -1,4 +1,4 @@
-name: Build DEV version
+name: DEV Check & build
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - 'main'
 
 jobs:
-  check:
+  build-aur:
 
     runs-on: ubuntu-latest
     container:
@@ -19,11 +19,34 @@ jobs:
       uses: actions/checkout@main
 
     - name: Build AUR packages
-      id: info
       run: |
         sh scripts/pullFromAur.sh
-        echo "num=$(date +'%y.%m')" >> $GITHUB_OUTPUT 
-        echo "sha=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
+      
+    - name: Add AUR repository to cache
+      uses: actions/cache@main
+      with:
+        path: /repo
+        key: aur-packages
+
+
+  check-packages:
+    needs: build-aur
+
+    runs-on: ubuntu-latest
+    container:
+      image: archlinux
+      options: --cap-add SYS_ADMIN --security-opt apparmor:unconfined
+    
+    steps:  
+
+    - name: Clone code
+      uses: actions/checkout@main
+
+    - name: Mount AUR repository
+      uses: actions/cache@main
+      with:
+        path: /repo
+        key: aur-packages
 
     - name: Check if all ISO packages are available
       run: |
@@ -31,6 +54,25 @@ jobs:
         cp archFiles/pacman.conf /etc/
         pacman -Syu - < archFiles/bootstrap_packages.x86_64 --noconfirm
         pacman -Syu - < archFiles/packages.x86_64 --noconfirm
+
+  create-iso:
+    needs: build-aur
+
+    runs-on: ubuntu-latest
+    container:
+      image: archlinux
+      options: --cap-add SYS_ADMIN --security-opt apparmor:unconfined
+
+    steps:
+
+    - name: Clone code
+      uses: actions/checkout@main
+
+    - name: Mount AUR repository
+      uses: actions/cache@main
+      with:
+        path: /repo
+        key: aur-packages
 
     - name: Create ISO
       run: |
