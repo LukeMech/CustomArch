@@ -6,7 +6,7 @@ on:
       - 'main'
 
 jobs:
-  build-aur:
+  refresh-aur:
 
     runs-on: ubuntu-latest
     container:
@@ -30,7 +30,6 @@ jobs:
 
 
   check-packages:
-    needs: build-aur
 
     runs-on: ubuntu-latest
     container:
