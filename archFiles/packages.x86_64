@@ -30,6 +30,7 @@ xf86-video-ati
 xf86-video-intel
 
 # Gnome
+eog
 gdm-plymouth
 gnome-console
 gnome-keyring
@@ -37,4 +38,5 @@ gnome-menus
 nautilus
 pamac-nosnap
 power-profiles-daemon
+totem
 xdg-user-dirs
