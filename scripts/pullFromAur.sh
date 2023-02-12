@@ -21,24 +21,34 @@ cd /workingDir/aurPackages
 # Aur packages - clone, make
 echo "=> [INFO] Cloning and building packages..."
 
-PACKAGES="
-archlinux-appstream-data-pamac
-libpamac-nosnap
-pamac-nosnap
+# Pamac
+runuser -u maketmp -- git clone https://aur.archlinux.org/archlinux-appstream-data-pamac
+cd archlinux-appstream-data-pamac
+runuser -u maketmp -- makepkg -si --noconfirm
+cp *.pkg.tar.zst /repo
+cd ..
+runuser -u maketmp -- git clone https://aur.archlinux.org/libpamac-nosnap
+cd libpamac-nosnap
+runuser -u maketmp -- makepkg -si --noconfirm
+cp *.pkg.tar.zst /repo
+cd ..
+runuser -u maketmp -- git clone https://aur.archlinux.org/pamac-nosnap
+cd pamac-nosnap
+runuser -u maketmp -- makepkg -s --noconfirm
+cp *.pkg.tar.zst /repo
+cd ..
 
-plymouth
-gdm-plymouth
-"
-
-for p in $PACKAGES
-do  
-    runuser -u maketmp -- git clone "https://aur.archlinux.org/$p"
-    cd "$p"
-    echo "=> [INFO] $p will be (temporarily) installed!"
-    runuser -u maketmp -- makepkg -si --noconfirm
-    cp *.pkg.tar.zst /repo
-    cd ..
-done
+# Plymouth
+runuser -u maketmp -- git clone https://aur.archlinux.org/plymouth
+cd plymouth
+runuser -u maketmp -- makepkg -si --noconfirm
+cp *.pkg.tar.zst /repo
+cd ..
+runuser -u maketmp -- git clone https://aur.archlinux.org/gdm-plymouth
+cd gdm-plymouth
+runuser -u maketmp -- makepkg -s --noconfirm
+cp *.pkg.tar.zst /repo
+cd ..
 
 # Aur packages - add to repo
 echo "=> [INFO] Creating local repo..."
