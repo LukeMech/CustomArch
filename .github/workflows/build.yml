@@ -41,6 +41,7 @@ jobs:
         cp /lukeMechArch/* /iso
 
   upload:
+    needs: build
 
     runs-on: ubuntu-latest
     
