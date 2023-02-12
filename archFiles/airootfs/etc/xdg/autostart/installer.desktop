@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=Installer
-Exec=kgx -e 'sudo archinstall'
+Exec=kgx -e 'wmctrl -r :ACTIVE: -b add,fullscreen; unclutter -idle 1 & sudo archinstall'

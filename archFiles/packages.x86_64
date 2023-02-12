@@ -22,6 +22,8 @@ pipewire-jack
 pipewire-pulse
 sudo
 syslinux
+unclutter
+wmctrl
 
 # Display
 mesa
