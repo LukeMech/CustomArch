@@ -26,7 +26,7 @@ jobs:
       uses: actions/cache@main
       with:
         path: /repo
-        key: aur-packages
+        key: AUR Packages
 
 
   check-packages:
@@ -46,14 +46,17 @@ jobs:
       uses: actions/cache@main
       with:
         path: /repo
-        key: aur-packages
+        key: AUR Packages
 
     - name: Check if all ISO packages are available
       run: |
         rm -rf /etc/pacman.conf
         cp archFiles/pacman.conf /etc/
+        sed -i '/#/d' bootstrap_packages.x86_64
+        sed -i '/#/d' packages.x86_64
         pacman -Syu - < archFiles/bootstrap_packages.x86_64 --noconfirm
         pacman -Syu - < archFiles/packages.x86_64 --noconfirm
+
 
   create-iso:
     needs: check-packages
@@ -72,7 +75,7 @@ jobs:
       uses: actions/cache@main
       with:
         path: /repo
-        key: aur-packages
+        key: AUR Packages
 
     - name: Get commit and date
       id: info
@@ -83,7 +86,8 @@ jobs:
     - name: Create ISO
       run: |
         sh scripts/build.sh
-        mv /lukeMechArch/*.iso "/lukeMechArch/LukeMechArch-${{ steps.info.outputs.num }}-DEV-${{ steps.info.outputs.sha }}.iso"        
+        mv /lukeMechArch/*.iso "/lukeMechArch/LukeMechArch-${{ steps.info.outputs.num }}-DEV-${{ steps.info.outputs.sha }}.iso"  
+        rm -rf /repo/*      
 
     - name: Upload ISO
       uses: actions/upload-artifact@main
