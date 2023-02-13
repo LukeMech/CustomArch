@@ -27,9 +27,7 @@ jobs:
       run: sh scripts/build.sh
 
     - name: Add ISO to release
-      id: create_release
-      uses: ncipollo/release-action@main
+      uses: softprops/action-gh-release@master
       with:
-        allowUpdates: true
-        omitBodyDuringUpdate: true
-        artifacts: /lukeMechArch/*.iso
+        append_body: true
+        files: /lukeMechArch/*.iso
