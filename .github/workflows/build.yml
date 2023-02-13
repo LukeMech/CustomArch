@@ -67,5 +67,6 @@ jobs:
       with:
         file_glob: true
         overwrite: true
+        release_name: ${{ steps.info.outputs.ver }}
         file: /iso/*.iso
         body: ${{ steps.read_release.info.RELEASE_BODY }}
