@@ -9,7 +9,8 @@ jobs:
   build-upload:
 
     runs-on: ubuntu-latest
-    permissions: read-all, write-all
+    permissions:
+      contents: write
     container:
       image: archlinux
       options: --cap-add SYS_ADMIN --security-opt apparmor:unconfined
