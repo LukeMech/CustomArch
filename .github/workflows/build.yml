@@ -27,7 +27,8 @@ jobs:
       run: sh scripts/build.sh
 
     - name: Add ISO to release
-      uses: softprops/action-gh-release@master
+      uses: svenstaro/upload-release-action@master
       with:
         append_body: true
-        files: /lukeMechArch/*.iso
+        file_glob: true
+        file: /lukeMechArch/*.iso
