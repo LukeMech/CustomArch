@@ -14,6 +14,9 @@ ExecStart=/bin/desktop-file-edit /usr/share/applications/qvidcap.desktop --set-k
 ExecStart=/bin/desktop-file-edit /usr/share/applications/org.gnome.Extensions.desktop --set-key "NoDisplay" --set-value "true"
 ExecStart=/bin/desktop-file-edit /usr/share/applications/org.gnome.Console.desktop --set-key "Categories" --set-value "GNOME"
 ExecStart=/bin/desktop-file-edit /usr/share/applications/org.gnome.Console.desktop --set-key "Icon" --set-value "mail-attachment-symbolic"
+ExecStart=/bin/desktop-file-edit /usr/share/applications/org.gnome.Console.desktop --set-key "Name" --set-value "Runner"
+ExecStart=/bin/desktop-file-edit /usr/share/applications/gparted.desktop --set-key "Icon" --set-value "drive-harddisk-symbolic"
+ExecStart=/bin/desktop-file-edit /usr/share/applications/gparted.desktop --set-key "Name" --set-value "Disks"
 
 [Install]
 WantedBy=multi-user.target

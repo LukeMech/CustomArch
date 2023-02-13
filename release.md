@@ -1,8 +1,8 @@
+# ✨ What's new
+- Gparted installed into ISO - now you can manage your drives clicking icon
+
 # 🪛 Repaired bugs
-- UEFI systems - glitched boot screen
+- Archinstall - deps installed in ISO
 
 # 🛠️ To do
 - Custom installer
-
-# 🪲 Known bugs
-- Missing libs for archinstall, run `sudo pacman -S parted` or any other deps, just read error
