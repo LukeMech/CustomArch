@@ -22,9 +22,8 @@ jobs:
 
     - name: Read release.md to use as a body of new release
       id: read_release
-      shell: bash
       run: |
-        r=$(cat path/to/release.md)        
+        r=$(cat release.md)        
         r="${r//'%'/'%25'}"                          
         r="${r//$'\n'/'%0A'}"                   
         r="${r//$'\r'/'%0D'}"                         
