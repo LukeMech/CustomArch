@@ -9,6 +9,7 @@ jobs:
   build-upload:
 
     runs-on: ubuntu-latest
+    permissions: read-all|write-all
     container:
       image: archlinux
       options: --cap-add SYS_ADMIN --security-opt apparmor:unconfined
@@ -33,5 +34,5 @@ jobs:
     - name: Upload ISO
       uses: actions/upload-artifact@main
       with:
-        name: LukeMechArch ${{ steps.info.outputs.num }} DEV-${{ steps.info.outputs.sha }}
         path: /lukeMechArch
+        name: LukeMechArch ${{ steps.info.outputs.num }} DEV-${{ steps.info.outputs.sha }}

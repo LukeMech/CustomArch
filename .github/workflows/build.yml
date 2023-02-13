@@ -9,6 +9,7 @@ jobs:
   build-upload:
 
     runs-on: ubuntu-latest
+    permissions: read-all|write-all
     container:
       image: archlinux
       options: --cap-add SYS_ADMIN --security-opt apparmor:unconfined
@@ -19,9 +20,7 @@ jobs:
       uses: actions/checkout@main
 
     - name: Build AUR packages
-      id: info
-      run: |
-        sh scripts/pullFromAur.sh
+      run: sh scripts/pullFromAur.sh
 
     - name: Create ISO
       run: sh scripts/build.sh
