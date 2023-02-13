@@ -27,12 +27,10 @@ jobs:
     - name: Create ISO
       run: sh scripts/build.sh
 
-    - name: Save ISO to cache
-      uses: actions/cache/save@main
+    - name: Upload ISO
+      uses: actions/upload-artifact@main
       with:
         path: /lukeMechArch/*.iso
-        key: ISO-${{ steps.info.outputs.ver }}
-        enableCrossOsArchive: true
 
 
   release:
@@ -56,20 +54,16 @@ jobs:
         echo "RELEASE_BODY=$r" >> $GITHUB_OUTPUT  
         echo "ver=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT   
 
-    - name: Retore ISO from cache
-      uses: actions/cache/restore@v3
-      id: cache
+    - name: Retore ISO from artifacts
+      uses: actions/download-artifact@main
       with:
         path: /iso
-        key: ISO-${{ steps.info.outputs.ver }}
-        enableCrossOsArchive: true
-        fail-on-cache-miss: true
 
     - name: Create release
       uses: svenstaro/upload-release-action@master
       with:
         file_glob: true
         overwrite: true
-        file: /iso/*.iso
+        file: /iso/**/*.iso
         release_name: ${{ steps.info.outputs.ver }}
         body: ${{ steps.read_release.info.RELEASE_BODY }}
