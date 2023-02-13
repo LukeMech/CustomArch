@@ -1,5 +1,6 @@
 # Base
 amd-ucode
+arch-install-scripts
 archinstall
 base
 btrfs-progs
@@ -18,6 +19,7 @@ mkinitcpio-archiso
 nano
 networkmanager
 ntfs-3g
+parted
 pipewire-jack
 pipewire-pulse
 sudo
