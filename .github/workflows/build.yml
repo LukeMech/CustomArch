@@ -22,7 +22,6 @@ jobs:
       id: info
       run: |
         sh scripts/pullFromAur.sh
-        echo "num=$(date +'%y.%m')" >> $GITHUB_OUTPUT 
 
     - name: Create ISO
       run: sh scripts/build.sh
@@ -32,5 +31,5 @@ jobs:
       uses: ncipollo/release-action@main
       with:
         allowUpdates: true
+        omitBodyDuringUpdate: true
         artifacts: /lukeMechArch/*.iso
-        draft: true
