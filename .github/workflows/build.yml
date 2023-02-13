@@ -20,7 +20,7 @@ jobs:
     - name: Clone code
       uses: actions/checkout@main
 
-    - name: Read release.md to use as a body of new release
+    - name: Read release.md
       id: read_release
       run: |
         r=$(cat release.md)        

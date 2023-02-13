@@ -3,10 +3,10 @@ gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgro
 gsettings set org.gnome.desktop.background picture-uri-dark file:///usr/share/backgrounds/space.jpg
 
 # Customize apps menu
-gsettings set org.gnome.shell app-picker-layout "[{'installer.desktop': <{'position': <0>}>, 'org.gnome.Console.desktop': <{'position': <1>}>, 'shutdown.desktop': <{'position': <2>}>, 'reboot.desktop': <{'position': <3>}>}]"
+gsettings set org.gnome.shell app-picker-layout "[{'gparted.desktop': <{'position': <0>}>, 'installer.desktop': <{'position': <1>}>, 'org.gnome.Console.desktop': <{'position': <2>}>, 'shutdown.desktop': <{'position': <3>}>, 'reboot.desktop': <{'position': <4>}>}]"
 
 # Pin apps to taskbar
-gsettings set org.gnome.shell favorite-apps "['installer.desktop']"
+gsettings set org.gnome.shell favorite-apps "['gparted.desktop', 'installer.desktop']"
 
 # Toggle dark mode
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
