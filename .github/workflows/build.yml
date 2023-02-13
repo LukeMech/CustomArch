@@ -6,11 +6,9 @@ on:
       - '**'
 
 jobs:
-  build-upload:
+  build:
 
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     container:
       image: archlinux
       options: --cap-add SYS_ADMIN --security-opt apparmor:unconfined
@@ -20,24 +18,53 @@ jobs:
     - name: Clone code
       uses: actions/checkout@main
 
+    - name: Build AUR packages
+      id: info
+      run: |
+        sh scripts/pullFromAur.sh
+        echo "ver=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT   
+
+    - name: Create ISO
+      run: sh scripts/build.sh
+
+    - name: Save ISO to cache
+      uses: actions/cache/save@main
+      with:
+        path: /lukeMechArch/*.iso
+        key: ISO-${{ steps.info.outputs.ver }}
+
+
+  release:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    
+    - name: Clone code
+      uses: actions/checkout@main
+
     - name: Read release.md
-      id: read_release
+      id: info
       run: |
         r=$(cat release.md)        
         r="${r//'%'/'%25'}"                          
         r="${r//$'\n'/'%0A'}"                   
         r="${r//$'\r'/'%0D'}"                         
-        echo "RELEASE_BODY=$r" >> $GITHUB_OUTPUT         
+        echo "RELEASE_BODY=$r" >> $GITHUB_OUTPUT  
+        echo "ver=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT   
 
-    - name: Build AUR packages
-      run: sh scripts/pullFromAur.sh
-
-    - name: Create ISO
-      run: sh scripts/build.sh
+    - name: Retore ISO from cache
+      uses: actions/cache/restore@v3
+      id: cache
+      with:
+        path: /iso
+        key: ISO-${{ steps.info.outputs.ver }}
 
     - name: Create release
       uses: svenstaro/upload-release-action@master
       with:
         file_glob: true
-        file: /lukeMechArch/*.iso
-        body: ${{ steps.read_release.outputs.RELEASE_BODY }}
+        file: /iso/*.iso
+        body: ${{ steps.read_release.info.RELEASE_BODY }}
