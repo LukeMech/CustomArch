@@ -20,7 +20,7 @@ btrfs-progs
 dosfstools
 e2fsprogs
 exfatprogs
-f2ds-tools
+f2fs-tools
 gpart
 gparted
 jfsutils
