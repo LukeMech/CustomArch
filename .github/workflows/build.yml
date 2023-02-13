@@ -20,15 +20,25 @@ jobs:
     - name: Clone code
       uses: actions/checkout@main
 
+    - name: Read release.md to use as a body of new release
+      id: read_release
+      shell: bash
+      run: |
+        r=$(cat path/to/release.md)        
+        r="${r//'%'/'%25'}"                          
+        r="${r//$'\n'/'%0A'}"                   
+        r="${r//$'\r'/'%0D'}"                         
+        echo "RELEASE_BODY=$r" >> $GITHUB_OUTPUT         
+
     - name: Build AUR packages
       run: sh scripts/pullFromAur.sh
 
     - name: Create ISO
       run: sh scripts/build.sh
 
-    - name: Add ISO to release
+    - name: Create release
       uses: svenstaro/upload-release-action@master
       with:
-        append_body: true
         file_glob: true
         file: /lukeMechArch/*.iso
+        body: ${{ steps.read_release.outputs.RELEASE_BODY }}
