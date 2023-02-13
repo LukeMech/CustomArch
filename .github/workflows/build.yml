@@ -32,6 +32,7 @@ jobs:
       with:
         path: /lukeMechArch/*.iso
         key: ISO-${{ steps.info.outputs.ver }}
+        enableCrossOsArchive: true
 
 
   release:
@@ -61,12 +62,14 @@ jobs:
       with:
         path: /iso
         key: ISO-${{ steps.info.outputs.ver }}
+        enableCrossOsArchive: true
+        fail-on-cache-miss: true
 
     - name: Create release
       uses: svenstaro/upload-release-action@master
       with:
         file_glob: true
         overwrite: true
-        release_name: ${{ steps.info.outputs.ver }}
         file: /iso/*.iso
+        release_name: ${{ steps.info.outputs.ver }}
         body: ${{ steps.read_release.info.RELEASE_BODY }}
