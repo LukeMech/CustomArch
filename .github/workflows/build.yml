@@ -63,6 +63,6 @@ jobs:
       with:
         file_glob: true
         overwrite: true
-        file: ~/**/*.iso
+        file: ./**/*.iso
         release_name: ${{ steps.info.outputs.ver }}
         body: ${{ steps.read_release.info.RELEASE_BODY }}
