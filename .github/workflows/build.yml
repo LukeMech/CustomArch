@@ -66,5 +66,6 @@ jobs:
       uses: svenstaro/upload-release-action@master
       with:
         file_glob: true
+        overwrite: true
         file: /iso/*.iso
         body: ${{ steps.read_release.info.RELEASE_BODY }}
