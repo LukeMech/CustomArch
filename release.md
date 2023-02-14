@@ -1,8 +1,5 @@
-# ✨ What's new
-- Gparted installed into ISO - now you can manage your drives clicking icon
-
 # 🪛 Repaired bugs
-- Archinstall - deps installed in ISO
+- Disk utility asking for authentication
 
 # 🛠️ To do
 - Custom installer
