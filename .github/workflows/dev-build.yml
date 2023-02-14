@@ -2,8 +2,8 @@ name: DEV Check & build
 
 on:
   push:
-    branches-ignore:    
-      - "main"
+    branches:    
+      - "dev"
 
 jobs:
   build-upload:
