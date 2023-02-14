@@ -17,6 +17,7 @@ ExecStart=/bin/desktop-file-edit /usr/share/applications/org.gnome.Console.deskt
 ExecStart=/bin/desktop-file-edit /usr/share/applications/org.gnome.Console.desktop --set-key "Name" --set-value "Runner"
 ExecStart=/bin/desktop-file-edit /usr/share/applications/gparted.desktop --set-key "Icon" --set-value "drive-harddisk-symbolic"
 ExecStart=/bin/desktop-file-edit /usr/share/applications/gparted.desktop --set-key "Name" --set-value "Disks"
+ExecStart=/bin/desktop-file-edit /usr/share/applications/gparted.desktop --set-key "Exec" --set-value "sudo gparted"
 
 [Install]
 WantedBy=multi-user.target
