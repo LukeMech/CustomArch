@@ -65,4 +65,4 @@ jobs:
         overwrite: true
         file: ./**/*.iso
         release_name: ${{ steps.info.outputs.ver }}
-        body: ${{ steps.read_release.info.RELEASE_BODY }}
+        body: ${{ steps.info.outputs.RELEASE_BODY }}
