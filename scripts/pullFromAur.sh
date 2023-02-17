@@ -2,7 +2,7 @@
 set -e
 
 # Install required dependencies
-echo "=> [INFO] Innstalling git, wget and base-devel..."
+echo "=> [INFO] Installing git, wget and base-devel..."
 pacman -Syu git wget base-devel --noconfirm --needed
 
 # Create temp user and working dir
