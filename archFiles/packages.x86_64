@@ -49,6 +49,3 @@ xf86-video-intel
 # Utilities
 gnome-console
 nano
-
-# My app
-ping-pong-counter

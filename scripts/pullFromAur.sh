@@ -33,10 +33,6 @@ runuser -u maketmp -- makepkg -s --noconfirm
 cp *.pkg.tar.zst /repo
 cd ..
 
-# Ping-Pong_Counter app
-wget https://github.com/LukeMech/Ping-Pong_Counter/releases/latest/download/Ping-pong_counter-x64.pacman
-cp Ping-pong_counter-x64.pacman /repo/ping-pong-counter.pkg.xz
-
 # Aur packages - add to repo
 echo "=> [INFO] Creating local repo..."
 repo-add /repo/aur-local.db.tar.gz /repo/*
