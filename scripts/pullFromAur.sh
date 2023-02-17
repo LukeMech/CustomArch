@@ -2,8 +2,8 @@
 set -e
 
 # Install required dependencies
-echo "=> [INFO] Innstalling git and base-devel..."
-pacman -Syu git base-devel --noconfirm --needed
+echo "=> [INFO] Installing git, wget and base-devel..."
+pacman -Syu git wget base-devel --noconfirm --needed
 
 # Create temp user and working dir
 echo "=> [INFO] Creating temp user and dirs..."
@@ -20,6 +20,17 @@ cd /workingDir/aurPackages
 
 # Aur packages - clone, make
 echo "=> [INFO] Cloning and building packages..."
+
+# Ping-Pong_Counter app
+wget https://github.com/LukeMech/Ping-Pong_Counter/releases/latest/download/Ping-pong_counter-x64.pacman
+cp Ping-pong_counter-x64.pacman /repo/ping-pong-counter.pkg.xz
+
+# Emojis
+runuser -u maketmp -- git clone https://aur.archlinux.org/ttf-twemoji
+cd ttf-twemoji
+runuser -u maketmp -- makepkg -s --noconfirm
+cp *.pkg.tar.zst /repo
+cd ..
 
 # Plymouth
 runuser -u maketmp -- git clone https://aur.archlinux.org/plymouth
