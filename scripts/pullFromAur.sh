@@ -22,8 +22,8 @@ cd /workingDir/aurPackages
 echo "=> [INFO] Cloning and building packages..."
 
 # Ping-Pong_Counter app
-wget https://github.com/LukeMech/Ping-Pong_Counter/releases/latest/download/Ping-pong_counter-x64.pacman
-cp Ping-pong_counter-x64.pacman /repo/ping-pong-counter.pkg.xz
+wget https://github.com/LukeMech/Ping-Pong_Counter/releases/latest/download/PingPongCounter-x64.pacman
+cp PingPongCounter-x64.pacman /repo/ping-pong-counter.pkg.xz
 
 # Emojis
 runuser -u maketmp -- git clone https://aur.archlinux.org/ttf-twemoji
