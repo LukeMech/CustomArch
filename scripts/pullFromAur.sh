@@ -25,6 +25,13 @@ echo "=> [INFO] Cloning and building packages..."
 wget https://github.com/LukeMech/Ping-Pong_Counter/releases/latest/download/PingPongCounter-x64.pacman
 cp PingPongCounter-x64.pacman /repo/ping-pong-counter.pkg.xz
 
+# Linux mainline kernel
+runuser -u maketmp -- git clone https://aur.archlinux.org/linux-mainline
+cd linux-mainline
+runuser -u maketmp -- makepkg -s --noconfirm
+cp *.pkg.tar.zst /repo
+cd ..
+
 # Emojis
 runuser -u maketmp -- git clone https://aur.archlinux.org/ttf-twemoji
 cd ttf-twemoji

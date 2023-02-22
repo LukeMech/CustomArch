@@ -3,8 +3,8 @@ amd-ucode
 base
 efibootmgr
 intel-ucode
-linux
 linux-firmware
+linux-mainline
 mkinitcpio
 mkinitcpio-archiso
 sudo
