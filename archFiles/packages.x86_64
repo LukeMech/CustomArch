@@ -32,7 +32,7 @@ udftools
 xfsprogs
 
 # Gnome & display
-gdm-plymouth
+gdm-plymouth-nox
 gnome-keyring
 gst-plugins-good
 gst-plugin-pipewire

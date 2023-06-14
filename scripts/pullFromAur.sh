@@ -28,14 +28,9 @@ runuser -u maketmp -- makepkg -s --noconfirm
 cp *.pkg.tar.zst /repo
 cd ..
 
-# Plymouth
-runuser -u maketmp -- git clone https://aur.archlinux.org/plymouth
-cd plymouth
-runuser -u maketmp -- makepkg -si --noconfirm
-cp *.pkg.tar.zst /repo
-cd ..
-runuser -u maketmp -- git clone https://aur.archlinux.org/gdm-plymouth
-cd gdm-plymouth
+# Gdm plymouth
+runuser -u maketmp -- git clone https://aur.archlinux.org/gdm-plymouth-nox
+cd gdm-plymouth-nox
 runuser -u maketmp -- makepkg -s --noconfirm
 cp *.pkg.tar.zst /repo
 cd ..
